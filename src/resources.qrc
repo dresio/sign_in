@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>../resources/helloworld-transparent.png</file>
+	<file>../resources/logo.jpg</file>
     </qresource>
 </RCC>
