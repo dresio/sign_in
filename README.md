@@ -1,11 +1,11 @@
-## Setup:(space)
-### Installing Depenencies:(space)
->sudo apt-get install build-essential libgl1-mesa-dev(space, space)
+## Setup:  
+### Installing Depenencies:  
+>sudo apt-get install build-essential libgl1-mesa-dev  
+  
+## How to Build:  
+>mkdir build  
+>cd build  
+>cmake ..  
+>make  
 
-## How to Build:(space)
->mkdir build(space)
->cd build(space)
->cmake ..(space)
->make(space, space)
-
-Executable file should be in the **/build/src** folder
+Executable file should be in the **/build/src** folder  
