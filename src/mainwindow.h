@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QString>
 
 namespace Ui {
 class MainWindow;
@@ -23,6 +24,8 @@ public:
 private slots:
     void on_actionExit_triggered();
 	void clickedSlot();
+	bool writeToFile();
+	QString getTextBox();
 
 private:
     Ui::MainWindow *ui;
