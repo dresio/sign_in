@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <ctime>
+#include <string.h>
 
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -29,14 +31,31 @@ void MainWindow::run()
 void MainWindow::clickedSlot()
 {
 	QString text = getTextBox();
-	QMessageBox msgBox;
-	msgBox.setText("Clicked");
-	msgBox.exec();
+	writeToFile(text);
+
 }
 
-bool MainWindow::writeToFile()
+//Format will be {user,timeIn,timeOut}
+//timeOut will be -1 if user hasn't signed out yet
+//Link users file will be used to parse same user using multiple IDs
+bool MainWindow::writeToFile(QString name)
 {
-	return false;
+	QFile data("ledger.csv");
+	std::time_t time = std::time(0);
+	std::tm* now = std::localtime(&time);
+	//time stream
+	int year = now->tm_year+1900;
+	int mon = now->tm_mon+1;
+	int day = now->tm_mday;
+	int hour = now->tm_hour;
+	int min = now->tm_min;
+
+	if (data.open(QFile::ReadWrite | QIODevice::Append)) {
+    	QTextStream out(&data);
+
+    	out << name << ',' << year << '-' << mon << '-' << day << '-' << hour << '-' << min << '\n';
+	}
+	return true;
 }
 
 QString MainWindow::getTextBox()

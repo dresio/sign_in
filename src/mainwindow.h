@@ -6,6 +6,16 @@
 #include <QLineEdit>
 #include <QMessageBox>
 #include <QString>
+#include <QFile>
+#include <QTextStream>
+
+#include "gtest/gtest.h"   // Google Test Framework
+#include "ftpclient-cpp/TestFTP/test_utils.h"    // Helpers for tests
+
+// Test subject (SUT)
+#include "ftpclient-cpp/FTP/FTPClient.h"
+
+#define PRINT_LOG [](const std::string& strLogMsg) { std::cout << strLogMsg << std::endl;  }
 
 namespace Ui {
 class MainWindow;
@@ -24,7 +34,7 @@ public:
 private slots:
     void on_actionExit_triggered();
 	void clickedSlot();
-	bool writeToFile();
+	bool writeToFile(QString text);
 	QString getTextBox();
 
 private:
