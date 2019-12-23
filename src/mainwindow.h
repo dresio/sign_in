@@ -8,6 +8,8 @@
 #include <QString>
 #include <QFile>
 #include <QTextStream>
+#include <iostream>
+#include <fstream>
 
 #include "gtest/gtest.h"   // Google Test Framework
 #include "ftpclient-cpp/TestFTP/test_utils.h"    // Helpers for tests
@@ -15,10 +17,8 @@
 // Test subject (SUT)
 #include "ftpclient-cpp/FTP/FTPClient.h"
 
-#define PRINT_LOG [](const std::string& strLogMsg) { std::cout << strLogMsg << std::endl;  }
-
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 class MainWindow : public QMainWindow
@@ -27,6 +27,7 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    bool initFTP();
     ~MainWindow(); 
 
     void run();
