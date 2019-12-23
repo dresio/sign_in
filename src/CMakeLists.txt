@@ -17,9 +17,6 @@ set(CMAKE_AUTORCC ON)
 # Add a compiler flag
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
-add_subdirectory(ftpclient-cpp)
-
-
 # Find the QtWidgets library
 find_package(Qt5 REQUIRED COMPONENTS Widgets)
 

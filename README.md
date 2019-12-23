@@ -4,8 +4,14 @@ Initial design is to be used for the Marine Robotics Club at Flordia Atlantic Un
   
 ## Setup:  
 ### Installing Depenencies:  
->sudo apt-get install build-essential libgl1-mesa-dev  
+>sudo apt install cmake build-essential libgl1-mesa-dev qtbase5-dev
   
+>cd /usr/src/gtest  
+>sudo cmake CMakeLists.txt  
+>sudo make
+
+>sudo cp *.a /usr/lib  
+
 ## How to Build:  
 >mkdir build  
 >cd build  
