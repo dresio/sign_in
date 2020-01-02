@@ -1,3 +1,0 @@
-[submodule "src/ftpclient-cpp"]
-	path = src/ftpclient-cpp
-	url = https://github.com/dresio/ftpclient-cpp.git
