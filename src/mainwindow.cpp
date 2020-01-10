@@ -2,12 +2,18 @@
 #include "ui_mainwindow.h"
 #include <ctime>
 #include <string.h>
+#include <QTimer>
+#include <QTime>
 
 MainWindow::MainWindow(QWidget *parent):QMainWindow(parent), ui(new Ui::MainWindow)
 {
 	ui->setupUi(this);
 
 	QMainWindow::showFullScreen();
+
+	timer_1s = new QTimer(this);
+	QObject::connect(timer_1s, SIGNAL(timeout()), this, SLOT(UpdateTime()));
+    timer_1s->start(1000);
 
 }
 
@@ -19,6 +25,25 @@ MainWindow::~MainWindow()
 void MainWindow::on_actionExit_triggered()
 {
 	this->close();
+}
+
+void MainWindow::UpdateTime()
+{
+	std::time_t time = std::time(0);
+	std::tm* now = std::localtime(&time);
+	//time stream
+	int year = now->tm_year+1900;
+	int mon = now->tm_mon+1;
+	int day = now->tm_mday;
+
+    ui->lbl_time->setText(QTime::currentTime().toString("hh:mm"));
+
+	std::string date;
+	date = std::to_string(day) + "/" + std::to_string(mon) + "/" + std::to_string(year);
+
+	QString qstr = QString::fromStdString(date);
+
+	ui->lbl_date->setText(qstr);
 }
 
 void MainWindow::run()

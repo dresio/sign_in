@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>887</width>
-    <height>925</height>
+    <width>892</width>
+    <height>737</height>
    </rect>
   </property>
   <property name="palette">
@@ -442,19 +442,6 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="sign_up">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>820</y>
-      <width>89</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Sign Up</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
@@ -493,12 +480,12 @@
      <string>Sign In/Out</string>
     </property>
    </widget>
-   <widget class="QLabel" name="time">
+   <widget class="QLabel" name="lbl_date">
     <property name="geometry">
      <rect>
       <x>360</x>
       <y>600</y>
-      <width>181</width>
+      <width>91</width>
       <height>17</height>
      </rect>
     </property>
@@ -506,7 +493,7 @@
      <enum>Qt::NoFocus</enum>
     </property>
     <property name="text">
-     <string>00/00/0000     00:00</string>
+     <string>00/00/0000     </string>
     </property>
    </widget>
    <widget class="QLineEdit" name="input">
@@ -530,6 +517,22 @@
     </property>
     <property name="text">
      <string>Name or ZNumber</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbl_time">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>600</y>
+      <width>61</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string> 00:00</string>
     </property>
    </widget>
   </widget>

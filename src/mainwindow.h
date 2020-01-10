@@ -30,9 +30,13 @@ private slots:
 	void clickedSlot();
 	bool writeToFile(QString text);
 	QString getTextBox();
+    void UpdateTime();
+
 
 private:
     Ui::MainWindow *ui;
+    QTimer *timer_1s;
+
 };
 
 #endif
